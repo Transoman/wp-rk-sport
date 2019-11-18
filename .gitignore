@@ -11,4 +11,5 @@ Thumbs.db
 *.pdf
 *.zip
 *.rar
+*.test
 yarn.lock
