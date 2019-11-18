@@ -19,7 +19,7 @@
     <div class="container">
         <div class="header__inner-wrapper">
             <div class="header__mobile">
-                <a href="#" class="header__logo">
+                <a href="<?php echo home_url( '/' ); ?>" class="header__logo">
                     <img src="<?php echo THEME_URL; ?>/images/general/logo.png" alt="">
                 </a>
                 <button class="header__burger-btn">
@@ -29,37 +29,37 @@
             <nav class="header__nav">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="#hero">
                             Главная 
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#clients">
                             Наши клиенты
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#models">
                             Модели костюмов
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#variants-print">
                             Виды нанесеный 
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#gallery">
                             Галерея
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#about">
                             О нас
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#contacts">
                         Контакты
                         </a>
                     </li>
