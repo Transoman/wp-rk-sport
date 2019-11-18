@@ -1,0 +1,99 @@
+.foto
+    position: relative
+    padding: 60px 0
+    +r(991)
+        padding:  45px 0
+    +r(1199)
+        width: 120%
+        left: -10%
+    +r(575)
+        width: 160%
+        left: -30%
+    &__wrapper
+        overflow: hidden
+    &__slider
+        position: relative
+        &::before, &::after
+            content: ''
+            width: 20%
+            height: 100%
+            position: absolute
+            left: 0
+            top: 0
+            background: rgba(255, 255, 255, .6)
+            z-index: 100
+            +r(992)
+                width: 25%
+        &::after
+            left: auto
+            right: 0
+    &__item
+        a, img
+            display: block
+        a
+            position: relative
+            &::before
+                content: ''
+                width: 30px
+                height: 30px
+                position: absolute
+                right: 8%
+                top: 5%
+                background: url('../irontheme/images/general/gallery-view.svg') center no-repeat
+                background-size: contain
+                z-index: 100
+                opacity: 0
+                transition: all .3s
+            &:hover
+                &::before
+                    opacity: 1
+    &__button
+        position: absolute
+        width: 48px
+        height: 48px
+        box-sizing: content-box
+        background-color: red
+        border: 8px solid $white
+        border-radius: 50%
+        bottom: 20%
+        z-index: 200
+        outline: none
+        background: linear-gradient(89.94deg, #0E80D0 0.04%, #0E507E 99.94%)
+        box-shadow: 0px 3px 5px rgba(10, 103, 168, 0.35)
+        cursor: pointer
+        +r(575)
+            width: 17px
+            height: 17px
+            border: 3px solid $white
+        &::after
+           content: ''
+           width: 15px
+           height: 15px
+           position: absolute
+           left: 55%
+           top: 50%
+           border-left: 2px solid $white  
+           border-bottom: 2px solid $white
+           transform: translate(-50%, -50%) rotate(45deg)
+           +r(575)
+                width: 5px
+                height: 5px 
+                border-left: 1px solid $white  
+                border-bottom: 1px solid $white
+        &--next
+            right: calc(20% - 32px)
+            +r(992)
+                right: calc(25% - 32px)
+            +r(575)
+                right: calc(25% - 10px)
+            &::after
+                left: 45%
+                transform: translate(-50%, -50%) rotate(-135deg) 
+        &--prev
+            left: calc(20% - 32px)
+            +r(992)
+                left: calc(25% - 32px)
+            +r(575)
+                left: calc(25% - 10px)
+            
+                

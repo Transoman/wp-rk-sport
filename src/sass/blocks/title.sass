@@ -1,0 +1,36 @@
+.title
+    font-size: 64px
+    font-family: $title-font
+    line-height: 150%   
+    margin-bottom: 0
+    display: inline-block
+    +r(991)
+        font-size: 50px
+    +r(767)
+        font-size: 40px
+    +r(575)
+        font-size: 30px
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 20px
+        &--center
+            display: block
+            width: 100%
+            text-align: center
+            .title
+                max-width: none
+    &__description
+        position: relative
+        max-width: 390px
+        +r(992)
+            display: none
+        &::before
+            content: ''
+            width: 2px
+            height: 100%
+            left: -10px
+            position: absolute
+            top: 0
+            background-color: $accent2

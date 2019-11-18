@@ -1,0 +1,187 @@
+#map
+    width: 770px
+    height: 423px
+    +r(1199)
+        width: 550px
+        height: 400px
+    +r(991)
+        width: 350px
+        height: 370px
+    +r(767)
+        width: 250px
+    +r(575)
+        width: 45%
+        height: 300px
+.contacts
+    padding: 90px 0 40px
+    background: bottom center no-repeat
+    background-size: contain
+    +r(575)
+        padding: 60px 0 20px
+    .container  
+        position: relative
+    &__inner-wrapper
+        display: flex
+        justify-content: space-between
+    &__list
+        margin-bottom: 30px
+        +r(575)
+            margin-bottom: 20px
+        & + .contacts__list
+            margin-top: -15px
+            +r(575)
+                margin-top: -10px
+        &:last-of-type
+            margin-bottom: 0
+        h3
+            font-size: 16px
+            +r(575)
+                font-size: 14px
+    &__item
+        display: flex
+        padding-left: 30px
+        margin-bottom: 7px
+        position: relative
+        &:last-of-type
+            margin-bottom: 0
+        h4
+            min-width: 60px
+            font-weight: 400
+            font-size: 16px
+            color: $accent-input2
+            margin: 0
+            +r(767)
+                font-size: 15px
+            +r(575)
+                display: none
+        p
+            margin: 0
+            font-weight: 700
+            font-size: 18px
+            +r(767)
+                font-size: 16px
+            +r(575)
+                font-size: 12px
+            a
+                color: $main-color
+                transition: all .3s
+                &:hover
+                    color: $accent
+        &::before
+            content: ''
+            width: 24px
+            height: 24px
+            position: absolute
+            left: 0
+            +r(575)
+                width: 14px
+                height: 14px
+        &--address
+            &::before 
+                background: url('./images/general/contacts--address.svg') center no-repeat
+                background-size: contain
+                +r(575)
+                    background: url('./images/general/contacts--address-mobile.svg') center no-repeat
+                    background-size: contain
+        &--tel
+            &::before 
+                background: url('./images/general/contacts--tel.svg') center no-repeat
+                background-size: contain
+                +r(575)
+                    background: url('./images/general/contacts--tel-mobile.svg') center no-repeat
+                    background-size: contain
+                
+        &--email         
+            &::before 
+                background: url('./images/general/contacts--email.svg') center no-repeat
+                background-size: contain
+                +r(575)
+                    background: url('./images/general/contacts--email-mobile.svg') center no-repeat
+                    background-size: contain
+
+    &__link
+        position: absolute
+        top: -65px
+        left: 10%
+        z-index: 1
+        +r(575)
+            position: relative
+            top: 0
+            left: 0
+            margin-top: 10px
+        &::before
+            content: ''
+            width: 92px
+            height: 43px
+            position: absolute
+            left: 100%
+            top: 12px
+            background: url('./images/general/link--arrow.svg') center no-repeat
+            background-size: contain
+            +r(575)
+                width: 39px
+                height: 25px
+                left: 103px
+                top: -21px
+                transform: rotate(-45deg)
+        h3
+            padding-left: 15px
+            max-width: 151px
+            font-weight: 400
+            font-size: 16px 
+            color: $contacts-link
+            box-sizing: content-box
+            position: relative
+            +r(575)
+                font-size: 10px
+            &::before
+               content: ''
+               width: 2px
+               height: 100%
+               position: absolute
+               left: 0
+               top: 0
+               background-color: $accent2 
+        &--elems
+            position: absolute
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            width: 104px
+            height: 104px
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 38.56%, rgba(11, 152, 251, 0.15) 100%), #FFFFFF;
+            border-radius: 50%
+            left: 240px
+            top: 60px
+            +r(575)
+                width: 65px
+                height: 65px
+                left: 150px
+                top: auto
+                bottom: 0
+                font-size: 10px
+            &::before
+                content: ''
+                width: 116px
+                height: 116px
+                position: absolute
+                left: 50%
+                top: 50%
+                transform: translate(-50%, -50%)
+                background: linear-gradient(89.94deg, #0E80D0 0.04%, #0E507E 99.94%)
+                z-index: -1
+                border-radius: 50%
+                +r(575)
+                    width: 71px
+                    height: 71px
+            a
+                display: block
+                font-weight: 500
+                line-height: 150%
+                text-align: center
+                color: $accent
+                border-bottom: 1px  solid $accent
+                transition: all .3s
+                &:hover
+                    border-bottom: 1px solid transparent

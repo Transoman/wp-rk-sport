@@ -1,0 +1,169 @@
+.info
+    padding: 30px 0 40px
+    +r(575)
+        padding: 15px 0
+    &__wrapper
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+    &__inner-wrapper
+        .slick-list
+            display: flow-root
+    &__button
+        width: calc(var(--swiper-navigation-size)/ 44 * 27)
+        height: var(--swiper-navigation-size)
+        z-index: 10
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-content: center
+        color: var(--swiper-navigation-color, var(--swiper-theme-color))
+        position: relative
+        top: 0
+        margin: 0
+        outline: none
+        &::after
+            content: ''
+            font-family: swiper-icons
+            letter-spacing: 0   
+            text-transform: none
+            font-variant: initial
+            font-size: 29px
+            color: $accent
+            +r(991)
+                font-size: 24px
+            +r(767)
+                font-size: 20px
+            +r(575)
+                font-size: 16px
+        &--next
+            right: 0
+            &::after
+                content: 'next'
+        &--prev
+            left: 0
+            margin-right: 30px
+            +r(991)
+                margin-right: 20px
+            +r(767)
+                margin-right: 15px
+            +r(575)
+                margin-right: 10px  
+            &::after
+                content: 'prev'
+        &-wrapper
+            display: flex
+        &.slick-disabled
+            opacity: 1
+            cursor: auto
+            &::after
+                color: $swiper-btn-dis
+    &__item
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 38.56%, rgba(11, 152, 251, 0.15) 100%), #FFFFFF
+        box-shadow: 0px 10px 30px #EAF6FF
+        border-radius: 5px  
+        outline: none
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        padding-top: 25px  
+        position: relative 
+        min-height: 328px
+        overflow: hidden
+        +r(575)
+            min-height: 190px
+            padding-top: 14px
+        h3, p
+            padding: 0 16px 0 70px
+            margin: 0
+            +r(1199)
+                padding: 0 15px 0 55px
+            +r(575)
+                padding: 0 10px 0 42px
+        h3
+            font-size: 28px
+            font-weight: 700
+            letter-spacing: .05em
+            font-family: $title-font
+            position: relative
+            +r(575)
+                font-size: 18px
+            &::before
+                content: ''
+                width: 22px
+                height: 22px
+                background: linear-gradient(89.94deg, #0E80D0 0.04%, #0E507E 99.94%)
+                position: absolute
+                left: 14px
+                box-sizing: content-box
+                border-radius: 50%
+                top: 6px
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, .15)
+                border: 7px solid $white
+                +r(1199)
+                    left: 10px
+                +r(575)
+                    width: 13px
+                    height: 13px
+                    border: 4px solid $white
+                    top: 3px 
+                    left: 8px
+            &::after
+                content: ''
+                width: 12px
+                height: 8px
+                border-bottom: 2px solid $white
+                border-left: 2px solid $white
+                position: absolute
+                left: 26px
+                top: 18px
+                border-radius: 1px
+                transform: rotate(-45deg)
+                +r(1199)
+                    left: 22px
+                +r(575)
+                    width: 8px
+                    height: 5px
+                    left: 15px
+                    top: 10.5px
+                    border-bottom: 1.5px solid $white
+                    border-left: 1.5px solid $white
+
+        p
+            color: $accent-input2
+            +r(575)
+                font-size: 10px
+        img
+            display: block
+            width: auto
+            max-width: 100%
+            height: auto
+            object-fit: contain
+            object-position: right bottom
+            max-height: 195.59px
+            position: absolute
+            bottom: 0
+            right: 0
+            +r(575)
+                max-height: 121px
+        span
+            position: absolute
+            bottom: 43px
+            left: 70px
+            font-family: $title-font
+            font-weight: 700
+            font-size: 96px
+            line-height: 150%
+            text-transform: uppercase
+            color: $about-number-color
+            +r(1199)
+                left: 55px
+            +r(575)
+                left: 40px
+                font-size: 55px
+    .slick-slide
+        box-sizing: border-box
+        margin: 0 15px
+        +r(1199)
+            margin: 0 10px

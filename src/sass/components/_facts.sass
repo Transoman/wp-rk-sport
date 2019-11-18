@@ -1,0 +1,224 @@
+.facts
+    padding: 95px 0 88px
+    background: center no-repeat
+    background-size: cover
+    overflow-x: hidden
+    &__inner-wrapper
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        position: relative
+        +r(767)
+            flex-direction: column
+    &__wrapper
+        position: relative
+        .img-absolute
+            position: absolute
+            &--man
+                top: 7%
+                left: 50%
+                transform: translate(-50%)
+                max-width: 100%
+                height: auto
+                +r(1199)
+                    left: auto
+                    right: 59%
+                    top: 14%
+                +r(991)
+                    max-width: 35%
+                +r(767)
+                    top: auto
+                    bottom: 11% 
+                    right: 55%
+                +r(575)
+                    right: 50%
+                +r(350)
+                    max-width: 47%
+                    right: 35%
+            &--catalog
+                left: 58%
+                top: 52%
+                +r(991)
+                    width: 35%
+                    height: auto
+                    left: 57%
+                    top: 58%
+                +r(767)
+                    top: auto
+                    bottom: 3%
+                +r(575)
+                    bottom: 10%
+            &--ball
+                top: 78%
+                right: 74%
+                +r(991)
+                    top: 71%
+                    right: 65%
+                +r(767)
+                    display: none
+
+    &__title
+        padding-left: 90px
+        max-width: 485px
+        font-size: 98px
+        color: $accent
+        font-family: $title-font
+        line-height: 90%
+        letter-spacing: 0.05em
+        text-transform: uppercase
+        box-sizing: border-box
+        position: relative
+        z-index: 1
+        +r(991)
+            font-size: 65px
+            padding-left: 70px
+        +r(575)
+            font-size: 40px
+            padding-left: 30px
+        strong
+            position: absolute
+            left: 0
+            top: -110px
+            font-size: 288px
+            line-height: 1em
+            color: $special-number
+            z-index: -1
+            +r(991)
+                font-size: 200px
+                left: 4%
+                top: -80px
+            +r(575)
+                left: 0
+    &__description
+        font-size: 30px
+        max-width: 485px
+        padding-left: 90px
+        position: relative
+        z-index: 1
+        +r(991)
+            font-size: 24px
+            padding-left: 40px
+        +r(575)
+            padding-left: 30px
+            font-size: 16px
+            margin-bottom: 29px
+    &__elem
+        +r(767)
+            width: 100%
+    &__list
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 38.56%, rgba(11, 152, 251, 0.15) 100%), #FFFFFF
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15)
+        border-radius: 5px
+        width: 340px
+        height: 405px
+        padding: 30px 15px 60px 14px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        position: relative
+        z-index: 1
+        +r(767)
+            height: auto
+            padding: 20px 15px 30px
+        +r(575)
+            width: 216px
+        &::before
+            content: ''
+            width: 90%
+            height: 10px
+            position: absolute
+            bottom: -10px
+            left: 50%
+            transform: translate(-50%)
+            background: $list-before-facts
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15)
+            border-radius: 0 0 5px 5px
+            z-index: -1
+        li
+            display: flex
+            justify-content: space-between
+            +r(575)
+                align-items: center
+            img
+                mix-blend-mode: multiply
+                max-width: 102px
+                height: auto
+                object-fit: contain
+                margin: 0 auto
+                +r(575)
+                    max-width: 46px
+            p
+                width: 165px
+                margin-top: 25px
+                margin-bottom: 0
+                font-size: 18px
+                color: $accent-input2
+                +r(575)
+                    font-size: 12px 
+                    margin-top: 0
+                    margin-left: 20px
+                span
+                    &.size
+                        font-size: 32px
+                        +r(575)
+                            font-size: 16px
+        &--number
+            display: block
+            width: 22px
+            height: 22px
+            margin: 22px 15px 15px
+            border-radius: 50%
+            text-align: center
+            background: linear-gradient(89.94deg, #0E80D0 0.04%, #0E507E 99.94%)
+            font-family: $title-font
+            font-size: 16px
+            color: $white
+            text-transform: uppercase
+            +r(575)
+                display: none
+        &--left
+            margin-left: 70px
+            +r(991)
+            margin-left: 0
+        &--right
+            margin-top: 40px
+            margin-right: 50px  
+            +r(991)
+                margin-right: 0
+            +r(767)
+                margin-left: auto
+
+.download
+    padding-top: 90px
+    +r(767)
+        padding-top: 45px
+    +r(575)
+        padding-top: 30px
+    &__inner-wrapper
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        +r(767)
+            flex-direction: column
+            justify-content: flex-start
+            align-items: flex-start
+    &__title
+        text-align: right
+        +r(767)
+            text-align: left
+            margin-bottom: 18px
+        h3
+            font-family: $title-font
+            font-size: 42px
+            line-height: 110%
+            letter-spacing: 0.05em
+            text-transform: uppercase
+            color: $accent
+            margin: 0
+            +r(575)
+                font-size: 24px
+        p
+            font-size: 16px
+            line-height: 150%
+            color: $accent-input2
+            margin: 0

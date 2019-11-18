@@ -1,0 +1,39 @@
+.button
+    display: block
+    color: $white
+    font-weight: 700
+    text-transform: uppercase
+    padding: 19px 30px 20px 29px
+    background: linear-gradient(180deg, #F25949 0%, #AE291A 100%)
+    box-shadow: 0px 5px 20px rgba(233, 83, 67, 0.4), inset 0px -5px 0px rgba(0, 0, 0, 0.25)
+    border-radius: 5px
+    border: none
+    transition: all .3s easy
+    margin: 0 auto
+    +r(991)
+        max-width: 276px
+    +r(575)
+        font-size: 12px
+        padding:  14px 19px
+    &:hover, &:focus
+        transform: translateY(1px)
+        box-shadow: 0px 5px 20px rgba(233, 83, 67, 0.4), inset 0px -6px 0px rgba(0, 0, 0, 0.25)
+    &:active
+        transform: translateY(0)
+        box-shadow: 0px 5px 20px rgba(233, 83, 67, 0.4), inset 0px -2px 0px rgba(0, 0, 0, 0.25) 
+    &--fluid
+        width: 100%
+    &--order
+        max-width: 276px
+        margin: 0
+        +r(991)
+            margin: 0 auto
+    &--download
+        max-width: 276px
+        margin: 0
+        margin-left: 40px
+        +r(991)
+            margin: 0 auto
+        +r(767)
+            margin: 0
+        
