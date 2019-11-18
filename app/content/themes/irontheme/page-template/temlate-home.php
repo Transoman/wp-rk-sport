@@ -606,18 +606,6 @@ get_header(); ?>
                 </div>
                 <div class="info__item">
                     <h3>
-                        Вышивка
-                    </h3>
-                    <p>
-                        Универсальное и долговечное нанесение изображений на ткань. 
-                    </p>
-                    <span>
-                        01
-                    </span>
-                    <img src="<?php echo THEME_URL; ?>/images/general/about-1.png" alt="img">
-                </div>
-                <div class="info__item">
-                    <h3>
                         Сублимация
                     </h3>
                     <p>
