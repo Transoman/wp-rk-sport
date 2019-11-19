@@ -1,8 +1,10 @@
 .first-screen
-    background: center no-repeat
-    background-size: cover
-    +r(767)
-        background-position: 35% center
+    &__background
+        background-position: center
+        background-size: cover
+        background-repeat: no-repeat
+        +r(767)
+            background-position: 30% center
     &__inner-wrapper
         display: flex
         justify-content: space-between
@@ -45,7 +47,7 @@
             font-size: 12px
             text-transform: uppercase
             padding: 4px 12px
-            background: linear-gradient(270deg, #F15949 0%, #B42D1E 100%);
+            background: linear-gradient(270deg, #F15949 0%, #B42D1E 100%)
             +r(575)
                 font-size: 10px
 

@@ -19,7 +19,7 @@
       if ($insta): ?>
         <ul class="footer__social">
           <li>
-            <a href="<?php echo esc_url( $insta ); ?>" target="_blank">
+            <a href="<?php echo $insta; ?>" target="_blank">
               <img src="<?php echo THEME_URL; ?>/images/general/instagram.svg" alt="">
             </a>
           </li>

@@ -9,69 +9,69 @@ if ( have_rows('home_layout') ):
   while ( have_rows('home_layout') ) : the_row();
 
     if ( get_row_layout() == 'hero' ): ?>
+      <div class="first-screen__background" style="background-image: url('<?php the_sub_field( 'bg' ); ?>')">
+       <section class="first-screen" id="hero" >
+          <div class="container">
+            <div class="first-screen__inner-wrapper">
+              <div class="first-screen__description">
+                <?php $subtitle = get_sub_field( 'subtitle' );
+                $title = get_sub_field( 'title' );
+                $suptitle = get_sub_field( 'suptitle' );
 
-      <section class="first-screen" id="hero" style="background-image: url('<?php the_sub_field( 'bg' ); ?>')">
-        <div class="container">
-          <div class="first-screen__inner-wrapper">
-            <div class="first-screen__description">
-              <?php $subtitle = get_sub_field( 'subtitle' );
-              $title = get_sub_field( 'title' );
-              $suptitle = get_sub_field( 'suptitle' );
+                if ($suptitle): ?>
+                  <h3><?php echo $suptitle; ?></h3>
+                <?php endif; ?>
+                <?php if ($title): ?>
+                  <h1><?php echo $title; ?></h1>
+                <?php endif; ?>
+                <?php if ($subtitle): ?>
+                  <h2><?php echo $subtitle; ?></h2>
+                <?php endif; ?>
+              </div>
 
-              if ($suptitle): ?>
-                <h3><?php echo $suptitle; ?></h3>
+              <?php $form = get_sub_field( 'form' );
+              if ($form):
+                echo do_shortcode('[contact-form-7 id="'. $form . '" title="" html_class="first-screen__form form"]');
+              endif; ?>
+            </div>
+          </div>
+        </section>
+
+      <?php elseif ( get_row_layout() == 'clients' ): ?>
+
+        <section class="clients" id="clients">
+          <div class="container">
+            <div class="title__wrapper">
+              <?php $title = get_sub_field( 'title' );
+              $list = get_sub_field( 'list' );
+              if ($title): ?>
+                <h2 class="title"><?php echo $title; ?></h2>
               <?php endif; ?>
-              <?php if ($title): ?>
-                <h1><?php echo $title; ?></h1>
-              <?php endif; ?>
-              <?php if ($subtitle): ?>
-                <h2><?php echo $subtitle; ?></h2>
+
+              <?php if ($list): ?>
+                <div class="clients__button-wrapper">
+                  <div class="swiper-button-prev clients__button clients__button--prev"></div>
+                  <div class="swiper-button-next clients__button clients__button--next"></div>
+                </div>
               <?php endif; ?>
             </div>
 
-            <?php $form = get_sub_field( 'form' );
-            if ($form):
-              echo do_shortcode('[contact-form-7 id="'. $form . '" title="" html_class="first-screen__form form"]');
-            endif; ?>
-          </div>
-        </div>
-      </section>
-
-    <?php elseif ( get_row_layout() == 'clients' ): ?>
-
-      <section class="clients" id="clients" style="background-image: url('<?php echo THEME_URL; ?>/images/general/clients-bg.png')">
-        <div class="container">
-          <div class="title__wrapper">
-            <?php $title = get_sub_field( 'title' );
-            $list = get_sub_field( 'list' );
-            if ($title): ?>
-              <h2 class="title"><?php echo $title; ?></h2>
-            <?php endif; ?>
-
-            <?php if ($list): ?>
-              <div class="clients__button-wrapper">
-                <div class="swiper-button-prev clients__button clients__button--prev"></div>
-                <div class="swiper-button-next clients__button clients__button--next"></div>
-              </div>
-            <?php endif; ?>
-          </div>
-
-          <?php if (have_rows( 'list' )): ?>
-            <div class="clients__slider">
-              <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  <?php while (have_rows( 'list' )): the_row(); ?>
-                    <div class="swiper-slide">
-                      <?php echo wp_get_attachment_image( get_sub_field( 'logo' ), 'medium' ); ?>
-                    </div>
-                  <?php endwhile; ?>
+            <?php if (have_rows( 'list' )): ?>
+              <div class="clients__slider">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <?php while (have_rows( 'list' )): the_row(); ?>
+                      <div class="swiper-slide">
+                        <?php echo wp_get_attachment_image( get_sub_field( 'logo' ), 'medium' ); ?>
+                      </div>
+                    <?php endwhile; ?>
+                  </div>
                 </div>
               </div>
-            </div>
-          <?php endif; ?>
-        </div>
-      </section>
-
+            <?php endif; ?>
+          </div>
+        </section>
+      </div>
     <?php endif;
   endwhile;
 
