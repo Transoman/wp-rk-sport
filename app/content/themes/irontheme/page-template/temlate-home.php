@@ -530,7 +530,6 @@ endif; ?>
         </div>
         <div id="map"></div>
       </div>
-
       <?php $fb = get_sub_field( 'facebook' );
       $vk = get_sub_field( 'vk' );
       if ($fb || $vk): ?>
