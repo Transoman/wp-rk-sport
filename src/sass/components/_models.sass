@@ -16,11 +16,15 @@
             grid-column-start: 1
             grid-column-end: 4
             margin-top: 20px
+            +r(1199)
+                grid-column-end: 3
+            +r(767)
+                grid-column-end: 1
     &__item
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 38.56%, rgba(11, 152, 251, 0.15) 100%), #FFFFFF
         border: 1px solid #DFDFDF
         border-radius: 5px
-        padding: 35px 25px 40px
+        padding: 30px 25px 35px
         margin: 0 auto
         box-sizing: border-box
         display: block
@@ -34,7 +38,7 @@
         +r(991)
             max-width: 320px
         +r(575)
-            padding: 25px 15px 40px
+            padding: 25px 15px 30px
             max-width: 290px
         h3
             font-family: $title-font
