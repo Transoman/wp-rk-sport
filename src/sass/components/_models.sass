@@ -2,45 +2,36 @@
     padding: 60px 0 110px
     +r(575)
         padding: 50px 0
-    &__button
-        position: relative
-        top: 0
-        margin: 0
-        outline: none
-        &::after
-            font-size: 29px
-            color: $accent
-            +r(991)
-                font-size: 24px
-            +r(767)
-                font-size: 20px
-            +r(575)
-                font-size: 16px
-        &-wrapper
-            display: flex
-        &--next
-            right: 0
-        &--prev
-            left: 0
-            margin-right: 30px
-            +r(991)
-                margin-right: 20px
-            +r(767)
-                margin-right: 15px
-            +r(575)
-                margin-right: 10px  
-        &.swiper-button-disabled
-            opacity: 1
-            &::after
-                color: $swiper-btn-dis
+    &__slider
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 30px
+        margin-bottom: 50px
+        +r(1199)
+            grid-template-columns: repeat(2, 1fr)
+        +r(767)
+            grid-template-columns: 1fr
+            margin-bottom: 35px
     &__item
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 38.56%, rgba(11, 152, 251, 0.15) 100%), #FFFFFF
         border: 1px solid #DFDFDF
         border-radius: 5px
         padding: 35px 25px 40px
-        margin: 0 5px
+        margin: 0 auto
+        box-sizing: border-box
+        display: block
+        width: 100%
+        max-width: 370px
+        transition: all .3s
+        &:hover
+            border: 0px solid transparent
+            margin: 1px auto
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15)
+        +r(991)
+            max-width: 320px
         +r(575)
             padding: 25px 15px 40px
+            max-width: 290px
         h3
             font-family: $title-font
             text-transform: uppercase
@@ -57,7 +48,7 @@
             line-height: 150%
             text-align: center
             color: $accent-input2
-            margin-bottom: 20px
+            margin-bottom: 10px
             +r(575)
                 font-size: 12px
                 margin-bottom: 0
@@ -81,7 +72,7 @@
         img
             display: block
             width: 100%
-            max-width: 160px
+            max-width: 150px
             object-fit: contain
             +r(575)
                 max-width: 125px
@@ -127,10 +118,9 @@
         line-height: 150%
         text-align: center
         color: $accent
-        margin-bottom: 20px
+        margin-bottom: 10px
         +r(575)
             font-size: 18px
-            margin-bottom: 15px
         strong
             font-weight: 900
             font-size: 48px
@@ -149,7 +139,7 @@
         display: flex!important
         align-items: center
         justify-content: center
-        margin: 10px 0
+        margin: 5px auto
         background: $white
         border: 1px solid $accent-border
         border-radius: 5px
@@ -166,10 +156,10 @@
                 height: 45px
     &__nav
         padding: 0 25px
-        margin-bottom: 23px
-        +r(575)
-            padding: 0 15px
-            margin-bottom: 18px
+        margin-bottom: 10px
+        display: block
+        +r(991)
+            padding: 0
     &__elem
         ul
             display: flex

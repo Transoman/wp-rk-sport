@@ -83,64 +83,57 @@ if ($products->have_posts()): ?>
     <div class="container">
       <div class="title__wrapper">
         <h2 class="title">модели костюмов</h2>
-        <div class="models__button-wrapper">
-          <div class="swiper-button-prev models__button models__button--prev"></div>
-          <div class="swiper-button-next models__button models__button--next"></div>
-        </div>
       </div>
       <div class="models__slider">
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <?php while ($products->have_posts()): $products->the_post(); ?>
-              <div class="swiper-slide">
-                <div class="models__item">
-                  <h3><?php the_title(); ?></h3>
-                  <?php the_field( 'short_descr' ); ?>
+        <?php while ($products->have_posts()): $products->the_post(); ?>
+            <div class="models__item">
+                <h3><?php the_title(); ?></h3>
+                <?php the_field( 'short_descr' ); ?>
 
-                  <?php if (have_rows( 'models' )): ?>
-                    <div class="models__img-wrapper">
-                      <div class="models-slider__slider">
-                        <?php
-                        while (have_rows( 'models' )): the_row(); ?>
-                          <div class="models-slider__item">
-                            <?php echo wp_get_attachment_image( get_sub_field( 'photo' ), 'medium' ); ?>
-                          </div>
-                        <?php endwhile; ?>
-                      </div>
-                      <div class="models__img">
-                        <a href="#">
-                          <img src="#" alt="">
-                        </a>
-                      </div>
-                    </div>
-
-
-                    <h4>Выбор цвета:</h4>
-                    <div class="models-slider__nav">
-                      <?php while (have_rows( 'models' )): the_row(); ?>
-                        <div class="models-slider__elem">
-                          <ul>
-                            <?php while (have_rows( 'colors' )): the_row(); ?>
-                              <li data-colorUrl="<?php the_sub_field( 'photo' ); ?>">
-                                <img  src="<?php the_sub_field( 'color' ); ?>" alt="">
-                              </li>
-                            <?php endwhile; ?>
-                          </ul>
+                <?php if (have_rows( 'models' )): ?>
+                <div class="models__img-wrapper">
+                    <div class="models-slider__slider">
+                    <?php
+                    while (have_rows( 'models' )): the_row(); ?>
+                        <div class="models-slider__item">
+                        <?php echo wp_get_attachment_image( get_sub_field( 'photo' ), 'medium' ); ?>
                         </div>
-                      <?php endwhile; ?>
+                    <?php endwhile; ?>
                     </div>
-                  <?php endif; ?>
-
-                  <div class="models__price">
-                    от <strong><?php the_field( 'price' ); ?></strong> ₽
-                  </div>
-                  <button class="button modal_open">заказать костюм</button>
+                    <div class="models__img">
+                    <a href="#">
+                        <img src="#" alt="">
+                    </a>
+                    </div>
                 </div>
-              </div>
-            <?php endwhile; wp_reset_postdata(); ?>
-          </div>
-        </div>
+
+
+                <h4>Выбор цвета:</h4>
+                <div class="models-slider__nav">
+                    <?php while (have_rows( 'models' )): the_row(); ?>
+                    <div class="models-slider__elem">
+                        <ul>
+                        <?php while (have_rows( 'colors' )): the_row(); ?>
+                            <li data-colorUrl="<?php the_sub_field( 'photo' ); ?>">
+                            <img  src="<?php the_sub_field( 'color' ); ?>" alt="">
+                            </li>
+                        <?php endwhile; ?>
+                        </ul>
+                    </div>
+                    <?php endwhile; ?>
+                </div>
+                <?php endif; ?>
+
+                <div class="models__price">
+                от <strong><?php the_field( 'price' ); ?></strong> ₽
+                </div>
+                <button class="button modal_open">заказать костюм</button>
+            </div>
+        <?php endwhile; wp_reset_postdata(); ?>
       </div>
+      <button class="button button--blue read-more">
+        показать еще
+      </button>
     </div>
   </section>
 <?php endif; ?>
@@ -530,8 +523,8 @@ endif; ?>
         </div>
         <div id="map"></div>
       </div>
-      <?php $fb = get_sub_field( 'facebook' );
-      $vk = get_sub_field( 'vk' );
+      <?php $fb = get_field( 'facebook', 'option' );
+      $vk = get_field( 'vk', 'option' );
       if ($fb || $vk): ?>
         <div class="contacts__link">
           <h3>
@@ -543,12 +536,7 @@ endif; ?>
           <div class="contacts__link--elems">
             <?php if ($fb): ?>
               <a href="<?php echo esc_url( $fb ); ?>" target="_blank">
-                Facebook
-              </a>
-            <?php endif; ?>
-            <?php if ($vk): ?>
-              <a href="<?php echo esc_url( $vk ); ?>" target="_blank">
-                ВКонтакте
+                Instagram
               </a>
             <?php endif; ?>
           </div>

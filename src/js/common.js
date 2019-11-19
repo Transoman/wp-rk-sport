@@ -89,6 +89,7 @@ $(document).ready(function ($) {
   addSliders();
   burgerMenu();
   modelsSlider();
+  scrollingHeader();
 
   // SVG
   svg4everybody({});

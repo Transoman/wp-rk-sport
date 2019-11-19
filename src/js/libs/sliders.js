@@ -16,22 +16,7 @@ function addSliders() {
             }
         }
     });
-    const modelsSlider = new Swiper('.models__slider .swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        navigation: {
-            nextEl: '.models__button--next',
-            prevEl: '.models__button--prev',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2
-            },
-            991: {
-                slidesPerView: 3
-            }
-        }
-    });
+
     jQuery('.info__inner-wrapper--one').slick({
         slidesToShow: 3,
         infinite: false,
