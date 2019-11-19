@@ -75,38 +75,6 @@
             "maxlength": ""
         },
         {
-            "key": "field_5dd2a38935a29",
-            "label": "Facebook",
-            "name": "facebook",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_5dd2a3a035a2a",
-            "label": "VK",
-            "name": "vk",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
             "key": "field_5dd28324eae5c",
             "label": "Instagram",
             "name": "instagram",
@@ -254,5 +222,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1574087464
+    "modified": 1574164637
 }
