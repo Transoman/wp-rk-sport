@@ -9,8 +9,8 @@ if ( have_rows('home_layout') ):
   while ( have_rows('home_layout') ) : the_row();
 
     if ( get_row_layout() == 'hero' ): ?>
-
-      <section class="first-screen" id="hero" style="background-image: url('<?php the_sub_field( 'bg' ); ?>')">
+    <div class="first-screen__background" style="background-image: url('<?php the_sub_field( 'bg' ); ?>')">
+     <section class="first-screen" id="hero" >
         <div class="container">
           <div class="first-screen__inner-wrapper">
             <div class="first-screen__description">
@@ -39,7 +39,7 @@ if ( have_rows('home_layout') ):
 
     <?php elseif ( get_row_layout() == 'clients' ): ?>
 
-      <section class="clients" id="clients" style="background-image: url('<?php echo THEME_URL; ?>/images/general/clients-bg.png')">
+      <section class="clients" id="clients">
         <div class="container">
           <div class="title__wrapper">
             <?php $title = get_sub_field( 'title' );
@@ -71,7 +71,7 @@ if ( have_rows('home_layout') ):
           <?php endif; ?>
         </div>
       </section>
-
+    </div>
     <?php endif;
   endwhile;
 
