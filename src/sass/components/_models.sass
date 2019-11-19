@@ -6,12 +6,16 @@
         display: grid
         grid-template-columns: repeat(3, 1fr)
         grid-gap: 30px
-        margin-bottom: 50px
         +r(1199)
             grid-template-columns: repeat(2, 1fr)
         +r(767)
             grid-template-columns: 1fr
             margin-bottom: 35px
+        & > .button
+            max-width: none
+            grid-column-start: 1
+            grid-column-end: 4
+            margin-top: 20px
     &__item
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 38.56%, rgba(11, 152, 251, 0.15) 100%), #FFFFFF
         border: 1px solid #DFDFDF
@@ -126,6 +130,7 @@
             font-size: 48px
             +r(575)
                 font-size: 36px
+
 .models-slider
     &__slider
         width: 58px

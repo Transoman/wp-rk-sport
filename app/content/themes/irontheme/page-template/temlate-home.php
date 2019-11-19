@@ -77,63 +77,26 @@ if ( have_rows('home_layout') ):
 
 endif; ?>
 
-<?php $products = get_any_post( 'product', -1 );
+<?php $products = get_any_post( 'product', 3 );
 if ($products->have_posts()): ?>
   <section class="models" id="models">
     <div class="container">
       <div class="title__wrapper">
         <h2 class="title">модели костюмов</h2>
       </div>
-      <div class="models__slider">
-        <?php while ($products->have_posts()): $products->the_post(); ?>
-            <div class="models__item">
-                <h3><?php the_title(); ?></h3>
-                <?php the_field( 'short_descr' ); ?>
-
-                <?php if (have_rows( 'models' )): ?>
-                <div class="models__img-wrapper">
-                    <div class="models-slider__slider">
-                    <?php
-                    while (have_rows( 'models' )): the_row(); ?>
-                        <div class="models-slider__item">
-                        <?php echo wp_get_attachment_image( get_sub_field( 'photo' ), 'medium' ); ?>
-                        </div>
-                    <?php endwhile; ?>
-                    </div>
-                    <div class="models__img">
-                    <a href="#">
-                        <img src="#" alt="">
-                    </a>
-                    </div>
-                </div>
-
-
-                <h4>Выбор цвета:</h4>
-                <div class="models-slider__nav">
-                    <?php while (have_rows( 'models' )): the_row(); ?>
-                    <div class="models-slider__elem">
-                        <ul>
-                        <?php while (have_rows( 'colors' )): the_row(); ?>
-                            <li data-colorUrl="<?php the_sub_field( 'photo' ); ?>">
-                            <img  src="<?php the_sub_field( 'color' ); ?>" alt="">
-                            </li>
-                        <?php endwhile; ?>
-                        </ul>
-                    </div>
-                    <?php endwhile; ?>
-                </div>
-                <?php endif; ?>
-
-                <div class="models__price">
-                от <strong><?php the_field( 'price' ); ?></strong> ₽
-                </div>
-                <button class="button modal_open">заказать костюм</button>
-            </div>
-        <?php endwhile; wp_reset_postdata(); ?>
+      <div class="models__slider" id="response">
+        <?php while ($products->have_posts()): $products->the_post();
+          get_template_part('template-parts/product', 'card');
+        endwhile; wp_reset_postdata(); ?>
+        <?php if ( $products->max_num_pages > 1 ) : ?>
+          <script>
+            var true_posts = '<?php echo serialize($products->query_vars); ?>';
+            var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+            var max_pages = '<?php echo $products->max_num_pages; ?>';
+          </script>
+            <button class="button button--blue read-more load-more">показать еще</button>
+        <?php endif; ?>
       </div>
-      <button class="button button--blue read-more">
-        показать еще
-      </button>
     </div>
   </section>
 <?php endif; ?>
@@ -523,9 +486,8 @@ endif; ?>
         </div>
         <div id="map"></div>
       </div>
-      <?php $fb = get_field( 'facebook', 'option' );
-      $vk = get_field( 'vk', 'option' );
-      if ($fb || $vk): ?>
+      <?php $insta = get_field( 'instagram', 'option' );
+      if ($insta): ?>
         <div class="contacts__link">
           <h3>
             <strong>
@@ -534,11 +496,9 @@ endif; ?>
             в социальных сетях
           </h3>
           <div class="contacts__link--elems">
-            <?php if ($fb): ?>
-              <a href="<?php echo esc_url( $fb ); ?>" target="_blank">
-                Instagram
-              </a>
-            <?php endif; ?>
+            <a href="<?php echo $insta; ?>" target="_blank">
+              Instagram
+            </a>
           </div>
         </div>
       <?php endif; ?>

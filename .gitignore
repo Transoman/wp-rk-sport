@@ -1,6 +1,5 @@
 node_modules/
 vendor/
-app/content/ai1wm-backups/
 .idea/
 .DS_Store
 Thumbs.db
