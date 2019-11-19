@@ -531,8 +531,8 @@ endif; ?>
         <div id="map"></div>
       </div>
 
-      <?php $fb = get_sub_field( 'facebook' );
-      $vk = get_sub_field( 'vk' );
+      <?php $fb = get_field( 'facebook', 'option' );
+      $vk = get_field( 'vk', 'option' );
       if ($fb || $vk): ?>
         <div class="contacts__link">
           <h3>
