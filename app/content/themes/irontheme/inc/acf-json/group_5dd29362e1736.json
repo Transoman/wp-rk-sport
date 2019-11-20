@@ -87,7 +87,7 @@
                             "key": "field_5dd296d607fa6",
                             "label": "Цвет",
                             "name": "color",
-                            "type": "image",
+                            "type": "group",
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": 0,
@@ -96,16 +96,39 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5dd5142431fc9",
+                                    "label": "Цвет 1",
+                                    "name": "color_1",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                },
+                                {
+                                    "key": "field_5dd5144531fca",
+                                    "label": "Цвет 2",
+                                    "name": "color_2",
+                                    "type": "color_picker",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                }
+                            ]
                         },
                         {
                             "key": "field_5dd29e348d6ee",
@@ -172,5 +195,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1574084848
+    "modified": 1574245461
 }

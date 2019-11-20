@@ -26,7 +26,11 @@
           <ul>
             <?php while (have_rows( 'colors' )): the_row(); ?>
               <li data-colorUrl="<?php the_sub_field( 'photo' ); ?>">
-                <img  src="<?php the_sub_field( 'color' ); ?>" alt="">
+                <div class="models-slider__color">
+                  <?php $color = get_sub_field( 'color' ); ?>
+                  <span style="background-color: <?php echo $color['color_1']?>;" class="models-slider__color-item"></span>
+                  <span style="background-color: <?php echo $color['color_2']?>;" class="models-slider__color-item"></span>
+                </div>
               </li>
             <?php endwhile; ?>
           </ul>

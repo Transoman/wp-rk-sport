@@ -42,14 +42,16 @@
     <h3>
       спасибо, заявка принята
     </h3>
-    <p>
-      А пока вы ожидаете ответ, <br>
-      посмотрите наш инстаграм
-    </p>
-    <a href="instagram://user?username=rksport.team"  class="form__link" target="_blank">
-      <img src="<?php echo THEME_URL; ?>/images/general/instagram--modal.svg" alt="">
-      @rksport.team
-    </a>
+    <?php if ($insta): ?>
+      <p>
+        А пока вы ожидаете ответ, <br>
+        посмотрите наш инстаграм
+      </p>
+      <a href="<?php echo $insta; ?>"  class="form__link" target="_blank">
+        <img src="<?php echo THEME_URL; ?>/images/general/instagram--modal.svg" alt="">
+        @rksport.team
+      </a>
+    <?php endif; ?>
   </div>
 </div>
 

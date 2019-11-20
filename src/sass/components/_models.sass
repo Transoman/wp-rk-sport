@@ -31,10 +31,10 @@
         width: 100%
         max-width: 370px
         transition: all .3s
+        background-clip: padding-box
         &:hover
-            border: 0px solid transparent
-            margin: 1px auto
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15)
+            border-color: transparent
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15)
         +r(991)
             max-width: 320px
         +r(575)
@@ -179,15 +179,15 @@
                 width: calc( 12.5% - 10px)
                 margin: 0 5px
                 &.active
-                    img
-                        background: $white
+                    .models-slider__color
                         border: 2px solid #B9DDF8
-        img
-            cursor: pointer
-            display: block
-            background: transparent
-            border: 2px solid transparent
-            border-radius: 4px
-            padding: 2px
-            box-sizing: content-box
-            margin: 0 auto
+    &__color
+        display: flex
+        width: 28px
+        height: 28px
+        border: 2px solid transparent
+        border-radius: 4px
+        padding: 2px
+        cursor: pointer
+        &-item
+            width: 50%
