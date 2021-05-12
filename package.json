@@ -42,7 +42,7 @@
     "jquery-popup-overlay": "^2.1.1",
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9",
-    "swiper": "^5.2.0"
+    "swiper": "^6.5.1"
   },
   "browserslist": [
     "last 5 version",
